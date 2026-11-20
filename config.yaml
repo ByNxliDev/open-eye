@@ -1,0 +1,41 @@
+# --- Modelo (cualquier API compatible con OpenAI) ---
+base_url: https://openrouter.ai/api/v1
+api_key_env: OPENROUTER_API_KEY      # nombre de la variable en .env
+model: google/gemini-2.5-flash
+fallback_model: openai/gpt-4o-mini
+top: 8                               # documentos a consultar por pregunta
+
+# --- Fuentes para `openeye collect` ---
+urls:
+  - https://en.wikipedia.org/wiki/Open-source_intelligence
+  - https://es.wikipedia.org/wiki/Inteligencia_de_fuentes_abiertas
+  - https://en.wikipedia.org/wiki/Money_laundering
+  - https://en.wikipedia.org/wiki/Politically_exposed_person
+  - https://www.bellingcat.com/about/
+
+rss:
+  - https://feeds.bbci.co.uk/news/world/rss.xml
+  - https://www.theguardian.com/world/rss
+  - https://www.aljazeera.com/xml/rss/all.xml
+  - https://rss.dw.com/rdf/rss-en-all
+  - https://feeds.bbci.co.uk/mundo/rss.xml
+  - https://rss.dw.com/xml/rss-es-all
+  - https://feeds.elpais.com/mrss-s/pages/ep/site/elpais.com/portada
+  - https://www.bellingcat.com/feed/
+  - https://www.icij.org/feed/
+  - https://krebsonsecurity.com/feed/
+  - https://www.bleepingcomputer.com/feed/
+  - https://www.cisa.gov/cybersecurity-advisories/all.xml
+
+domains:
+  - python.org
+  - wikipedia.org
+  - example.com
+
+sanctions_urls:
+  - https://www.treasury.gov/ofac/downloads/sdn.csv
+
+# Archivos locales. Solo contenido público: `ask` e `investigate` los ignoran
+# salvo que uses --source file.
+files:
+  - data/files

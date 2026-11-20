@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "open-eye"
+version = "0.1.0"
+description = "CLI minimalista de OSINT: recolecta fuentes y responde preguntas con citas."
+requires-python = ">=3.10"
+dependencies = [
+    "httpx",
+    "trafilatura",
+    "feedparser",
+    "python-whois",
+    "openai",
+    "typer",
+    "pyyaml",
+    "python-dotenv",
+    "pypdf",
+    "openpyxl",
+]
+
+[project.scripts]
+openeye = "openeye.cli:app"
+
+[tool.setuptools]
+packages = ["openeye"]
